@@ -19,16 +19,16 @@ capitulation dip and only buys the turn back up:
     at most one order per reply, max slippage 100 bps (1%) past the close
     decided on. No new entries in the last 60 bars: a trade opened there has
     no time to earn back its round-trip cost before the final flatten.
-  * Exit: the whole position at +1.5% above the entry close (take profit),
+  * Exit: the whole position at +1.8% above the entry close (take profit),
     or when the close falls 1.5% below the highest close since entry
     (trailing stop), or 1.2% below the entry close (hard stop, for a fast
     crash the EMAs lag).
 
 Backtest on the published dev window of this round (1,440 bars, BTC -2.8%
-peak to trough): net PnL +$11.99, one round trip, max drawdown -1.50%, fees
-$0.80. The single trade bought the early capitulation dip (bar 72, $6,380)
-and sold into the recovery at the +1.5% take profit (bar 479, $6,477).
-Same rules on the previous round's dev window: +$25.48, two round trips,
+peak to trough): net PnL +$15.50, one round trip, max drawdown -1.50%, fees
+$0.81. The single trade bought the early capitulation dip (bar 72, $6,380)
+and sold into the recovery at the +1.8% take profit (bar 504).
+Same rules on the previous round's dev window: +$30.24, two round trips,
 both take-profit exits, max drawdown -0.66%. Baselines on this round's
 window: buy-and-hold about -$28, hold-cash $0, EMA-crossover about -$106.
 
@@ -52,7 +52,7 @@ FAST_SPAN = 8
 DIP_FRACTION = 0.005
 # Take profit above the entry close; trailing stop below the peak since
 # entry; hard stop below the entry close (all fractions of price).
-TAKE_PROFIT_FRACTION = 0.015
+TAKE_PROFIT_FRACTION = 0.018
 TRAIL_FRACTION = 0.015
 STOP_FRACTION = 0.012
 # No new entries from this batch index on (the window has 1,440 bars).
